@@ -48,9 +48,10 @@ namespace JournalApp
             if (!File.Exists(file))
             {
                 Console.WriteLine("file not found.!");
-                return;           }
+                return;         
+             }
 
-            }
+            
 
             _entries.Clear();
             string[] lines = File.ReadAllLines(file);
@@ -59,13 +60,15 @@ namespace JournalApp
             {
                 string[] parts = line.Split('|');
                 if (parts.Length == 3)
-                {
-                Entry entry = new Entry(parts[0], parts[1], parts[2]);
-                _entries.Add(entry);
-                }
+                        {
+                         Entry entry = new Entry(parts[0], parts[1], parts[2]);
+                         _entries.Add(entry);
+                        }
+           }
+            Console.WriteLine("Journal Loaded sucessfully!");
 
-            }
-            Console.WriteLine("Journal Loaded sucessfully!!");
+           
+
 
         } 
 
