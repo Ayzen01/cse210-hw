@@ -1,6 +1,7 @@
 using System;
 
 namespace JournalApp
+
 {
     class Program  
     {
@@ -56,11 +57,9 @@ namespace JournalApp
                 }
                 
             Console.WriteLine("Goodbye!");
-                
-
+            }     
 
         }
-
                
     }
 }

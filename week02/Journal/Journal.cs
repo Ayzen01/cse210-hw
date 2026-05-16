@@ -64,12 +64,9 @@ namespace JournalApp
                          Entry entry = new Entry(parts[0], parts[1], parts[2]);
                          _entries.Add(entry);
                         }
-           }
+            }
+            
             Console.WriteLine("Journal Loaded sucessfully!");
-
-           
-
-
         } 
 
     }
