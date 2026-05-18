@@ -1,0 +1,40 @@
+I think of abstraction as a “relevance filter.” The real world is very complex, full of minute details. If I were to program while trying to simulate absolutely everything, I’d go crazy.
+Abstraction is the ability to focus only on what matters, hiding the complexity to facilitate development and also protect the code.
+
+What does Abstraction mean?
+In software development, abstraction means looking at a real-world object or concept and selecting only the characteristics (attributes) and actions (methods) that truly matter—specifically those that make sense for the system you’re currently building.
+
+If I were designing a car for a game, what really matters would be an eye-catching, attractive design with vibrant colors, good speed, and high-performance tires and engine. If the same car were for the DMV system, the chassis, license plate, and owner’s name would be important. The real object is the same, but you abstract (select) only the parts that make sense for your context.
+
+Why is it important?
+The greatest benefit of abstraction is reducing complexity and isolating impact so as not to overload the system.
+
+When you hide the complicated details and show only a simple interface, you gain the freedom to change “how it’s done” in the future without breaking the rest of the program. Anyone using your code only needs to know what the method does, not how it works behind the scenes. This makes the system much easier to maintain, expand, and fix, saving hours of headaches with cascading bugs.
+
+Practical Application in Code
+In the diary program we structured, we applied abstraction to separate responsibilities and hide the complexity of manipulating files and generating text.
+
+Let’s look at this part of Program.cs:
+
+C#
+if (choice == “1”)
+{
+    string prompt = promptGen.GetRandomPrompt();
+    Console.WriteLine($“\n{prompt}”);
+    Console.Write(“> ”);
+    string response = Console.ReadLine();
+    string date = DateTime.Now.ToShortDateString();
+
+    Entry newEntry = new Entry(date, prompt, response);
+    theJournal.AddEntry(newEntry);
+}
+Detailed explanation of the application:
+Notice the lines promptGen.GetRandomPrompt(); and theJournal.AddEntry(newEntry);.
+
+The main class (Program) needs to display a random question and save a new entry. Thanks to abstraction:
+
+The Program has no idea how many questions are in the list, how the random index is calculated, or whether we’re using C#’s Random class. It simply asks, “Give me a prompt” via the GetRandomPrompt() method.
+
+Similarly, when we call theJournal.AddEntry(newEntry);, the main class doesn’t need to know whether the journal stores the information in a list, an array, or a complex structure. It simply says: “Save this for me.”
+
+Translated with DeepL.com (free version)
