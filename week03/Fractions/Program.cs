@@ -14,11 +14,11 @@ namespace FractionApp
 
             Fraction testGetSet = new Fraction();
             testGetSet.SetTop(3);
-            testGetSet.SetBotton(4);
+            testGetSet.SetBottom(4);
 
             Console.WriteLine(" --- Test Getters and Setters ---");
             Console.WriteLine($"Top modified: {testGetSet.GetTop()}");
-            Console.WriteLine($"Bottom modified: {testGetSet.GetBotton()}");
+            Console.WriteLine($"Bottom modified: {testGetSet.GetBottom()}");
             Console.WriteLine();
 
 
