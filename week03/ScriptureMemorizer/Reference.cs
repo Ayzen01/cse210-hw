@@ -5,26 +5,32 @@ public class Reference
     private int _chapter;
     private int _verse;
     private int _endVerse;
-}
-
-public Reference(string book, int chapter, int startVerse, int endVerse)
-{
-    _book = book;
-    _chapter = chapter;
-    _verse = startVerse;
-    _endVerse = endVerse;
-}
-
-public string GetDisplayText()
-{
-    if (_verse == _endVerse)
+     
+     public Reference(string book, int chapter, int verse)
     {
-        return $"{_book} {_chapter}: {_verse}";
-
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = verse;
     }
-    else
+    public Reference(string book, int chapter, int startVerse, int endVerse)
     {
-        return$"{_book} {_chapter}: {_verse}-{_endVerse}";
+           _book = book;
+           _chapter = chapter;
+           _verse = startVerse;
+           _endVerse = endVerse;
+    }
+
+    public string GetDisplayText()
+    {
+            if (_verse == _endVerse)
+            {
+                return $"{_book} {_chapter}: {_verse}";
+            }
+            else
+            {
+                return $"{_book} {_chapter}: {_verse}-{_endVerse}";
+            }
     }
 }
 

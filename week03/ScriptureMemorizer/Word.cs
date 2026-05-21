@@ -10,6 +10,11 @@ public class Word
         _isHidden = false;
     }
 
+    public void Hide()
+    {
+        _isHidden = true;
+    }
+
     public void Show()
     {
         _isHidden  = false;

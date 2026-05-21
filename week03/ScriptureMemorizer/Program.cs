@@ -1,6 +1,8 @@
 using System;
-//This is the ScriptureMemorizer Project.
+
 class Program
+
+//This is the ScriptureMemorizer Project.
 {
     static void Main(string[] args)
     {
@@ -19,7 +21,7 @@ class Program
 
             if (userInput.ToLower() != "quit")
             {
-                scriptureGame.HideRandomWords(3);
+                scriptureGame.HideRandomWords(1);
             }
         }
 
