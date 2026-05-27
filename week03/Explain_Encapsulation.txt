@@ -1,0 +1,57 @@
+Encapsulation is one of the pillars of object-oriented programming. Basically, it means hiding the internal state of an object.
+It consists of hiding the internal implementation details of a class, exposing only what is necessary for external use, usually through public methods.
+In practice, this means declaring attributes as private and providing controlled methods (getters, setters, or other behaviors) to access or modify this data.
+
+Main benefit
+The biggest benefit is control over data integrity. And also, without encapsulation, every point in the system that directly changes would have to be modified, a nightmare for maintenance.
+By encapsulating, you prevent viruses or malicious people from improperly or inconsistently altering the code.
+For example, you can validate business rules before allowing a modification, ensuring that the object always remains in a valid state.
+
+Practical application
+A common application is in banking systems: the BankAccount class encapsulates the balance as a private attribute.
+No one can simply set a negative balance without going through the withdrawal or deposit rules. This prevents inconsistencies such as a withdrawal exceeding the available balance.
+ 
+ Example of Encapsulation
+public class Word
+{
+//  HIDDEN WIRES (Private Attributes)
+// No one outside the class can come here and change these variables directly.
+
+
+private string _text;
+private bool _isHidden;
+
+//  REMOTE CONTROL BUTTONS (Public Methods)
+// Other parts of the program use these safe methods to interact with the word.
+
+public Word(string text)
+
+{
+
+_text = text;
+
+_isHidden = false; // Starts visible
+
+}
+
+// Button to HIDE. Whoever presses it doesn't need to know how C# changes the boolean.
+
+public void Hide()
+
+{
+
+_isHidden = true;
+
+}
+
+// Button to ASK if it's hidden. Protects the variable from being changed accidentally.
+
+public bool IsHidden()
+
+{
+
+return _isHidden;
+
+}
+
+}
