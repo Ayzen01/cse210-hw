@@ -9,6 +9,7 @@ class Comment
 
     public Comment(string name, string text)
     {
+        
         _name = name;
         _text = text;
 
@@ -48,7 +49,7 @@ class Video
           return _comments.Count;
        }
 
-    public void DisplayVideoINFo()
+    public void DisplayVideoInfo()
         {
             Console.WriteLine($"Title: {_title}");
             Console.WriteLine($"Author: {_author}");
