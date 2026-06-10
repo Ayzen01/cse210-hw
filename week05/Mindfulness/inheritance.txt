@@ -1,0 +1,55 @@
+What is Inheritance? Basically, inheritance is a programming mechanism that allows one class (called "daughter" or derived) to borrow the attributes and methods of another class (the "mother" or base).
+ It’s as if you inherit characteristics from your parents without having to be born twice. 
+ Instead of rewriting the same code for similar things, you create a base class with what is common and the daughter classes just add something specific.
+
+Why is it important and a big benefit? The main benefit is code reuse and ease of maintenance.
+ If you had to enter the code for "Student Name" and "Topic" in each different type of assignment (Math, History, etc.).
+ If you need to change something, you would have to upgrade in several places. 
+ With inheritance, you change in the base class and everything you inherited from it and already updates automatically. 
+ This reduces errors and saves a lot of time and many code lines
+
+Practical Application (Code Example) In the exercise of homework, 
+I created a base class called Assignment (or Task) that holds the student’s name and subject. 
+Then, we created specific classes such as MathAssignment (Math Task) and WritingAssignment (Writing Task).
+
+
+Base Class: contains what is common to everything.
+
+public class Assignment
+{
+    protected string _studentName;
+    protected string _topic;
+
+    public Assignment(string name, string topic)
+    {
+        _studentName = name;
+        _topic = topic;
+    }
+
+    public string GetSummary()
+    {
+        return $"Aluno: {_studentName}, Tópico: {_topic}";
+    }
+}
+.
+
+Derived Class: inherits everything from Assignment and adds the specific
+public class MathAssignment : Assignment
+{
+    private string _section;
+    private string _problems;
+
+    public MathAssignment(string name, string topic, string section, string problems) 
+        : base(name, topic)   // Calls the constructor of the parent class
+    {
+        _section = section;
+        _problems = problems;
+    }
+
+    public string GetMathInfo()
+    {
+       \\ Here we can use the _studentName inherited from the base class.
+        return $"{_section} Problemas {_problems}";
+    }
+}
+
